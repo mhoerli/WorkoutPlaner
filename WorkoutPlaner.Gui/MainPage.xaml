@@ -1,7 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:WorkoutPlaner.Core.ViewModels;assembly=WorkoutPlaner.Core"
+             x:DataType="viewmodels:MainViewModel"
              x:Class="WorkoutPlaner.Gui.MainPage">
 
+    <Grid Padding="10" ColumnSpacing="5" RowSpacing="5" RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto" ColumnDefinitions="Auto, *, *, * ">
+
+        <Label Text="Wie viele Tage pro Woche willst du trainieren?" Grid.Row="1" Grid.Column="1" Padding="10"/>
+
+        <Button Text="2 Tage" Grid.Row="2" Grid.Column="1" Command="{Binding tage2Command}"/>
+
+        <Button Text="3 Tage" Grid.Row="2" Grid.Column="2" Command="{Binding tage3Command}"/>
+
+        <Button Text="4 Tage" Grid.Row="2" Grid.Column="3" Command="{Binding tage4Command}"/>
+
+        <Label Text="{Binding Workouts}" Grid.Row="3" Grid.Column="1" Padding="10"/>
+
+        <Label Text="Möchtest du noch Übungen hinzufügen?" Grid.Row="4" Grid.Column="1" />
+
+        <Entry Text="" Grid.Row="5" Grid.Column="1"/>
+    </Grid>
 
 </ContentPage>

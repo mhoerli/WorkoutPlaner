@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using WorkoutPlaner.Core.ViewModels;
 
 namespace WorkoutPlaner.Gui
 {
@@ -14,6 +15,8 @@ namespace WorkoutPlaner.Gui
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
+            builder.Services.AddSingleton<MainViewModel>();
+            builder.Services.AddSingleton<MainPage>();
 
 #if DEBUG
     		builder.Logging.AddDebug();

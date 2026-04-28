@@ -7,7 +7,7 @@
     Title="WorkoutPlaner.Gui">
 
     <ShellContent
-        Title="Home"
+        Title="WorkoutPlaner"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
 

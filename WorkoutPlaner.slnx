@@ -1,3 +1,5 @@
 <Solution>
+  <Project Path="WorkoutPlaner.Cli/WorkoutPlaner.Cli.csproj" Id="efd02ad3-6bb7-46ad-8b2c-8a8efc708067" />
+  <Project Path="WorkoutPlaner.Core/WorkoutPlaner.Core.csproj" Id="d7776eff-2d1b-4508-a534-afc852d07a3e" />
   <Project Path="WorkoutPlaner.Gui/WorkoutPlaner.Gui.csproj" />
 </Solution>
