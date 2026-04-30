@@ -3,11 +3,20 @@ using CommunityToolkit.Mvvm.Input;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using WorkoutPlaner.Data;
+using WorkoutPlaner.Data.Models;
 
 namespace WorkoutPlaner.Core.ViewModels;
 
 public partial class MainViewModel : ObservableObject
 {
+    private IRepository _repository;
+
+    public MainViewModel(IRepository repository)
+    {
+        _repository = repository;
+    }
+
     [ObservableProperty]
     private string _workouts = string.Empty;
 

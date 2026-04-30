@@ -1,5 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using WorkoutPlaner.Core.ViewModels;
+using WorkoutPlaner.Data;
+using WorkoutPlaner.Data.Services;
 
 namespace WorkoutPlaner.Gui
 {
@@ -17,6 +19,8 @@ namespace WorkoutPlaner.Gui
                 });
             builder.Services.AddSingleton<MainViewModel>();
             builder.Services.AddSingleton<MainPage>();
+
+            builder.Services.AddSingleton<IRepository>(new XMLRepository());
 
 #if DEBUG
     		builder.Logging.AddDebug();
