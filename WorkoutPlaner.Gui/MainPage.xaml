@@ -5,19 +5,21 @@
              x:DataType="viewmodels:MainViewModel"
              x:Class="WorkoutPlaner.Gui.MainPage">
 
-    <Grid Padding="10" ColumnSpacing="5" RowSpacing="5" RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto" ColumnDefinitions="Auto, *, *, * ">
+    <Grid Padding="10" ColumnSpacing="5" RowSpacing="5" RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto" ColumnDefinitions="Auto, *, *, * " BackgroundColor="LightGray">
 
-        <Label Text="Wie viele Tage pro Woche willst du trainieren?" Grid.Row="1" Grid.Column="1" Padding="10"/>
+        <Label Text="WorkoutPlaner" FontSize="Header" FontAttributes="Bold" Grid.Column="1" Grid.Row="0"/>
 
-        <Button Text="2 Tage" Grid.Row="2" Grid.Column="1" Command="{Binding tage2Command}"/>
+        <Label Text="Wie viele Tage pro Woche willst du trainieren?" FontAttributes="Bold" Grid.Row="1" Grid.Column="1" Padding="10"/>
 
-        <Button Text="3 Tage" Grid.Row="2" Grid.Column="2" Command="{Binding tage3Command}"/>
+        <Button BackgroundColor="DarkBlue" Text="2 Tage" Grid.Row="2" Grid.Column="1" Command="{Binding tage2Command}"/>
 
-        <Button Text="4 Tage" Grid.Row="2" Grid.Column="3" Command="{Binding tage4Command}"/>
+        <Button BackgroundColor="DarkBlue" Text="3 Tage" Grid.Row="2" Grid.Column="2" Command="{Binding tage3Command}"/>
 
-        <Label Text="{Binding Workouts}" Grid.Row="3" Grid.Column="1" Padding="10"/>
+        <Button BackgroundColor="DarkBlue" Text="4 Tage" Grid.Row="2" Grid.Column="3" Command="{Binding tage4Command}"/>
 
-        <Label Text="Möchtest du noch Übungen hinzufügen?" Grid.Row="4" Grid.Column="1" />
+        <Label Text="{Binding Workouts}" Grid.Row="3" Grid.Column="2" Padding="10"/>
+
+        <Label Text="Möchtest du noch Übungen hinzufügen?" FontAttributes="Bold" Grid.Row="4" Grid.Column="1" />
 
         <Entry Text="" Grid.Row="5" Grid.Column="1"/>
     </Grid>
