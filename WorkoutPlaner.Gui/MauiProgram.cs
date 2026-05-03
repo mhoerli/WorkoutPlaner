@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using CommunityToolkit.Maui;
+using Microsoft.Extensions.Logging;
 using WorkoutPlaner.Core.ViewModels;
 using WorkoutPlaner.Data;
 using WorkoutPlaner.Data.Services;
@@ -12,6 +13,7 @@ namespace WorkoutPlaner.Gui
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
+                .UseMauiCommunityToolkit()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");

@@ -2,6 +2,7 @@
 using CommunityToolkit.Mvvm.Input;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using WorkoutPlaner.Data;
 using WorkoutPlaner.Data.Models;
@@ -12,37 +13,60 @@ public partial class MainViewModel : ObservableObject
 {
     private IRepository _repository;
 
-    public MainViewModel(IRepository repository)
+    [ObservableProperty]
+    private string _input;
+
+    private int counter = 0;
+
+    private List<string> _befehle = new List<string>();
+
+    [RelayCommand]
+    private void Weiter()
     {
-        _repository = repository;
+        if (counter > 3)
+        {
+            Befehl = string.Empty;
+        }
+        else
+        {
+            Befehl = _befehle[counter];
+            counter++;
+        }
+
     }
 
     [ObservableProperty]
-    private string _workouts = string.Empty;
+    private string _befehl;
+
+    public MainViewModel(IRepository repository)
+    {
+        _repository = repository;
+        _befehle = ["Gib eine Bizepsübung ein", "Gib eine Trizepsübung ein", "Gib eine Rückenübung ein", "Gib eine Brustübung ein"];
+    }
+
+    [ObservableProperty]
+    private ObservableCollection<Exercise> _workouts = new ObservableCollection<Exercise>();
+
 
     [RelayCommand]
-    private void tage2()
+    public void AddExercise()
     {
-        Workouts = "Ganzkörper: Montag + Donnerstag" +
-            " 3x Brust" +
-            " 4x Rücken" +
-            " 3x Schulter" +
-            " 3x Quads" +
-            " 3x Hamstring" +
-            " 2x Waden";
+        var Ex = new Exercise
+        {
+            Name = this._input
+        };
+        Workouts.Add(Ex);
+        _repository.AddExercise(Ex);
     }
 
     [RelayCommand]
-    private void tage3()
+    public void Load()
     {
-        Workouts = "2x Latzug";
-    }
-
-    [RelayCommand]
-    private void tage4()
-    {
-        Workouts = "2x Beinstrecker";
+        var exercises = _repository.AllExercises();
+        foreach (var exercise in exercises)
+        {
+            Workouts.Add(exercise); 
+        }
     }
 }
-
 
