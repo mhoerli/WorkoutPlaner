@@ -32,7 +32,7 @@
             </CollectionView>
         </Border>
 
-        <Label Text="Möchtest du noch Übungen hinzufügen?" Grid.Row="4" Grid.Column="1" />
+        <Label Text="Möchtest du noch Übungen hinzufügen?" FontAttributes="Bold" Grid.Row="4" Grid.Column="1" />
 
         <Entry Text="{Binding Input}" Grid.Row="5" Grid.Column="1"/>
 
