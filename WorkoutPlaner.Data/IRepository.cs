@@ -10,4 +10,6 @@ public interface IRepository
     bool AddExercise(Exercise exercise);
 
     List<Exercise> AllExercises();
+
+    void ClearExercises();
 }

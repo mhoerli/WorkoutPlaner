@@ -42,6 +42,7 @@ public partial class MainViewModel : ObservableObject
     {
         _repository = repository;
         _befehle = ["Gib eine Bizepsübung ein", "Gib eine Trizepsübung ein", "Gib eine Rückenübung ein", "Gib eine Brustübung ein"];
+        Weiter();
     }
 
     [ObservableProperty]
@@ -67,6 +68,13 @@ public partial class MainViewModel : ObservableObject
         {
             Workouts.Add(exercise); 
         }
+    }
+
+    [RelayCommand]
+    public void RepositoryClear()
+    {
+        Workouts.Clear();
+        _repository.ClearExercises();
     }
 }
 

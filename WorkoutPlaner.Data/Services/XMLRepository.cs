@@ -45,4 +45,10 @@ public class XMLRepository : IRepository
         }
         return exercises;
     }
+
+    public void ClearExercises()
+    {
+        _rootElement.RemoveAll();
+        _rootElement.Save(_filename);
+    }
 }
