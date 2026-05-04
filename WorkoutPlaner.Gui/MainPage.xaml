@@ -14,13 +14,22 @@
                 BindingContext="{Binding Source={x:Reference MainGrid}, Path=BindingContext}"/>
     </ContentPage.Behaviors>
     
-    <Grid x:Name="MainGrid" Padding="10" ColumnSpacing="5" RowSpacing="5" RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto" ColumnDefinitions="Auto, *, *">
+    <Grid x:Name="MainGrid" Padding="10" ColumnSpacing="5" RowSpacing="5" RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto" ColumnDefinitions="*, *, *">
 
-        <Label Grid.Row="0" Grid.Column="0" Text="{Binding Befehl}"/>
+        <Image Source="markus.webp" Grid.Row="0" Grid.Column="0" MaximumHeightRequest="180" HorizontalOptions="Start" VerticalOptions="Center"/>
 
-        <Button Grid.Row="0" Grid.Column="1" Text="Weiter" Command="{Binding WeiterCommand}"/>
+        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" 
+               Text="WorkoutPlaner" FontSize="70" FontAttributes="Bold" TextColor="Blue"
+               HorizontalTextAlignment="Center" VerticalOptions="Center"/>
 
-        <Border Grid.Row="3" Grid.ColumnSpan="3" Margin="0,10,0,0" MinimumHeightRequest="200" StrokeShape="RoundRectangle 10,10,10,10" BackgroundColor="#33575757">
+        <Image Source="arnold.jpg" Grid.Row="0" Grid.Column="2" MaximumHeightRequest="200" HorizontalOptions="End" VerticalOptions="Center"/>
+
+        <Label Grid.Row="1" Grid.Column="1" 
+               Text="{Binding Befehl}" HorizontalTextAlignment="Center" FontSize="15"/>
+
+        <Button Grid.Row="2" Grid.Column="1" Text="Weiter" Command="{Binding WeiterCommand}" BackgroundColor="Blue"/>
+
+        <Border Grid.Row="3" Grid.ColumnSpan="3" Margin="0,25,0,25" MinimumHeightRequest="200" StrokeShape="RoundRectangle 10,10,10,10" BackgroundColor="#33575757">
             <CollectionView ItemsSource="{Binding Workouts}" >
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="models:Exercise">
@@ -32,13 +41,13 @@
             </CollectionView>
         </Border>
 
-        <Label Text="Welche Übungen möchtest du hinzufügen?" FontAttributes="Bold" Grid.Row="4" Grid.Column="1" />
+        <Label Text="Welche Übungen möchtest du hinzufügen?" HorizontalTextAlignment="Center" FontAttributes="Bold" Grid.Row="4" Grid.Column="0" />
 
         <Entry Text="{Binding Input}" Grid.Row="5" Grid.Column="0"/>
 
-        <Button Text="Hinzufügen" Command="{Binding AddExerciseCommand}" Grid.Row="5" Grid.Column="1"/>
+        <Button Text="Hinzufügen" Command="{Binding AddExerciseCommand}" Grid.Row="5" Grid.Column="1" BackgroundColor="Blue"/>
 
-        <Button Text="Clear" Command="{Binding RepositoryClearCommand}" Grid.Row="5" Grid.Column="2" />
+        <Button Text="Clear" Command="{Binding RepositoryClearCommand}" Grid.Row="5" Grid.Column="2" BackgroundColor="Blue"/>
     </Grid>
 
 </ContentPage>

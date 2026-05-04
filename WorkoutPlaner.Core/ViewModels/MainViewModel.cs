@@ -23,16 +23,8 @@ public partial class MainViewModel : ObservableObject
     [RelayCommand]
     private void Weiter()
     {
-        if (counter > 3)
-        {
-            Befehl = string.Empty;
-        }
-        else
-        {
             Befehl = _befehle[counter];
             counter++;
-        }
-
     }
 
     [ObservableProperty]
@@ -41,7 +33,8 @@ public partial class MainViewModel : ObservableObject
     public MainViewModel(IRepository repository)
     {
         _repository = repository;
-        _befehle = ["Gib eine Bizepsübung ein", "Gib eine Trizepsübung ein", "Gib eine Rückenübung ein", "Gib eine Brustübung ein"];
+        _befehle = ["Gib eine Bizepsübung ein", "Gib eine Trizepsübung ein", "Gib eine Rückenübung ein", "Gib eine Brustübung ein", 
+            "Gib eine Schulterübung ein", "Gib eine Quadübung ein", "Gib eine Hamstringübung ein", "Gib eine Wadenübung ein", "Fertig :)!"];
         Weiter();
     }
 
