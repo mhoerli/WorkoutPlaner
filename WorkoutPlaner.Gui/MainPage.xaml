@@ -14,13 +14,13 @@
                 BindingContext="{Binding Source={x:Reference MainGrid}, Path=BindingContext}"/>
     </ContentPage.Behaviors>
     
-    <Grid x:Name="MainGrid" Padding="10" ColumnSpacing="5" RowSpacing="5" RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto" ColumnDefinitions="Auto, *, *, * ">
+    <Grid x:Name="MainGrid" Padding="10" ColumnSpacing="5" RowSpacing="5" RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto" ColumnDefinitions="Auto, *, *">
 
         <Label Grid.Row="0" Grid.Column="0" Text="{Binding Befehl}"/>
 
         <Button Grid.Row="0" Grid.Column="1" Text="Weiter" Command="{Binding WeiterCommand}"/>
 
-        <Border Grid.Row="3" Grid.ColumnSpan="4" Margin="0,10,0,0" MinimumHeightRequest="200" StrokeShape="RoundRectangle 10,10,10,10" BackgroundColor="#33575757">
+        <Border Grid.Row="3" Grid.ColumnSpan="3" Margin="0,10,0,0" MinimumHeightRequest="200" StrokeShape="RoundRectangle 10,10,10,10" BackgroundColor="#33575757">
             <CollectionView ItemsSource="{Binding Workouts}" >
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="models:Exercise">
@@ -34,11 +34,11 @@
 
         <Label Text="Welche Übungen möchtest du hinzufügen?" FontAttributes="Bold" Grid.Row="4" Grid.Column="1" />
 
-        <Entry Text="{Binding Input}" Grid.Row="5" Grid.Column="1"/>
+        <Entry Text="{Binding Input}" Grid.Row="5" Grid.Column="0"/>
 
-        <Button Text="Hinzufügen" Command="{Binding AddExerciseCommand}" Grid.Row="5" Grid.Column="2"/>
+        <Button Text="Hinzufügen" Command="{Binding AddExerciseCommand}" Grid.Row="5" Grid.Column="1"/>
 
-        <Button Text="Clear" Command="{Binding RepositoryClearCommand}" Grid.Row="5" Grid.Column="3" />
+        <Button Text="Clear" Command="{Binding RepositoryClearCommand}" Grid.Row="5" Grid.Column="2" />
     </Grid>
 
 </ContentPage>

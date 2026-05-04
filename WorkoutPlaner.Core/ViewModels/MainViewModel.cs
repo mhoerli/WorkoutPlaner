@@ -58,6 +58,7 @@ public partial class MainViewModel : ObservableObject
         };
         Workouts.Add(Ex);
         _repository.AddExercise(Ex);
+        this.Input = string.Empty;
     }
 
     [RelayCommand]
