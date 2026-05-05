@@ -34,7 +34,7 @@
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="models:Exercise">
                         <StackLayout Orientation="Horizontal" Spacing="10">
-                            <Label Text="{Binding Name}" TextColor="White" VerticalTextAlignment="Center"/>
+                            <Label Text="{Binding Name}" TextColor="{AppThemeBinding Dark=White, Light=Black}" VerticalTextAlignment="Center"/>
                         </StackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
