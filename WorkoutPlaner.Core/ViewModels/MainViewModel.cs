@@ -3,6 +3,7 @@ using CommunityToolkit.Mvvm.Input;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Net.Http.Headers;
 using System.Text;
 using WorkoutPlaner.Data;
 using WorkoutPlaner.Data.Models;
@@ -23,8 +24,15 @@ public partial class MainViewModel : ObservableObject
     [RelayCommand]
     private void Weiter()
     {
+        if (counter > 8)
+        {
+            Befehl = _befehle[8];
+        }
+        else
+        {
             Befehl = _befehle[counter];
             counter++;
+        }
     }
 
     [ObservableProperty]
