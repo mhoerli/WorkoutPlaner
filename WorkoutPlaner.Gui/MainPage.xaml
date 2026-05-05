@@ -25,7 +25,7 @@
         <Image Source="arnold.jpg" Grid.Row="0" Grid.Column="2" MaximumHeightRequest="200" HorizontalOptions="End" VerticalOptions="Center"/>
 
         <Label Grid.Row="1" Grid.Column="1" 
-               Text="{Binding Befehl}" HorizontalTextAlignment="Center" FontSize="15"/>
+               Text="{Binding Befehl}" FontAttributes="Bold" HorizontalTextAlignment="Center" FontSize="25"/>
 
         <Button Grid.Row="2" Grid.Column="1" Text="Weiter" Command="{Binding WeiterCommand}" BackgroundColor="Blue"/>
 
@@ -34,14 +34,14 @@
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="models:Exercise">
                         <StackLayout Orientation="Horizontal" Spacing="10">
-                            <Label Text="{Binding Name}" TextColor="{AppThemeBinding Dark=White, Light=Black}" VerticalTextAlignment="Center"/>
+                            <Label Text="{Binding Name}" TextColor="{AppThemeBinding Dark=White, Light=Black}" FontSize="15" FontAttributes="Bold" VerticalTextAlignment="Center"/>
                         </StackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
         </Border>
 
-        <Label Text="Welche Übungen möchtest du hinzufügen?" HorizontalTextAlignment="Center" FontAttributes="Bold" Grid.Row="4" Grid.Column="0" />
+        <Label Text="Welche Übungen möchtest du hinzufügen?" FontSize="20" HorizontalTextAlignment="Center" FontAttributes="Bold" Grid.Row="4" Grid.Column="0" />
 
         <Entry Text="{Binding Input}" Grid.Row="5" Grid.Column="0"/>
 
